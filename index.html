@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaleidoscope AI</title>
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#1c1917">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script async src="https://pay.google.com/gp/p/js/pay.js"></script>
+    <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #0c0a09; /* A slightly warmer, very dark gray */
+      }
+      .recharts-tooltip-cursor {
+        stroke-width: 1px !important;
+      }
+      .recharts-polar-grid-concentric-polygon {
+          stroke-opacity: 0.5;
+      }
+      .recharts-scatter-symbol {
+          transition: all 0.3s ease-in-out;
+      }
+
+      /* Animations for Consciousness Chat */
+      @keyframes nebula-flow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .nebula-bg {
+        background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0) 70%),
+                    linear-gradient(135deg, #0c0a09 0%, #1c1132 50%, #0c0a09 100%);
+        background-size: 200% 200%;
+        animation: nebula-flow 25s ease infinite;
+      }
+
+      @keyframes connection-pulse {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.8; }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .7; }
+      }
+      .input-pulse-glow:focus-within {
+        box-shadow: 0 0 15px 2px rgba(139, 92, 246, 0.4);
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.12.0",
+    "recharts": "https://esm.sh/recharts@^3.1.0",
+    "three": "https://esm.sh/three@0.167.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.0.4",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@^9.109.2",
+    "@react-three/postprocessing": "https://esm.sh/@react-three/postprocessing@^2.15.11"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-stone-950 text-gray-100 font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
